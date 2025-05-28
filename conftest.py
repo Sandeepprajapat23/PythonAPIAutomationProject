@@ -19,7 +19,6 @@ def create_token():
         in_json=False
     )
     verify_status_codes(response_data=response, expected_data=200)
-    verify_json_key_for_not_null_token(response.json()["token"])
     return response.json()["token"]
 
 

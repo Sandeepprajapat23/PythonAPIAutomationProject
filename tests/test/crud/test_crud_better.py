@@ -32,7 +32,7 @@ class TestCRUDBooking(object):
         logger  = logging.getLogger(__name__)
         booking_id = get_booking_id
         token = create_token
-        put_url = APIConstants.url_patch_put_delete(self,booking_id=booking_id)
+        put_url = APIConstants.url_patch_put_delete(booking_id=booking_id)
         response = put_request(
             url=put_url,
             headers=Util().common_header_put_patch_delete_with_basic_cookie(token=token),
@@ -53,7 +53,7 @@ class TestCRUDBooking(object):
     def test_delete_booking_id(self,create_token,get_booking_id):
         booking_id = get_booking_id
         token = create_token
-        delete_url = APIConstants.url_patch_put_delete(self,booking_id=booking_id)
+        delete_url = APIConstants.url_patch_put_delete(booking_id=booking_id)
         response = delete_request(
             url=delete_url,
             headers=Util().common_header_put_patch_delete_with_basic_cookie(token=token),
