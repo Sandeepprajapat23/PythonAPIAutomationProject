@@ -7,6 +7,11 @@ def verify_json_key_for_not_null(key):
 def verify_key_response_not_be_none(key):
     assert key is not None
 
+def verify_response_delete(response):
+    assert "Created" in response
+
+def verify_response_key(key, expected_data):
+    assert key == expected_data
 #common verification
 #HTTP status code
 #Headers
