@@ -6,9 +6,9 @@
 import openpyxl
 import pytest
 
-from src.constants.api_constants import APIConstants
-from src.helpers.api_requests_wrapper import *
-from src.utils.utils import Util
+from Src.constants.api_constants import APIConstants
+from Src.helpers.api_requests_wrapper import post_request
+from Src.utils.utils import Util
 
 
 def read_credentials_from_excel(file_path):
@@ -30,7 +30,7 @@ def create_auth_request(username, password):
         "password": password
     }
     response = post_request(
-        url=APIConstants.url_create_token(),
+        url=APIConstants.url_for_create_token(),
         headers=Util().common_headers_json(),
         auth=None,
         payload=payload,
@@ -40,7 +40,7 @@ def create_auth_request(username, password):
 
 
 @pytest.mark.parametrize("user_cred", read_credentials_from_excel(
-    "/Users/pramod/PycharmProjects/Py2xAPIAutomationFramework/tests/test/datadriventesting/testdata_ddt_123.xlsx"))
+    "/Users/sande/PycharmProjects/PythonAPIAutomationProject/tests/test/datadriventesting/testdata_ddt_123.xlsx"))
 def test_create_auth_with_excel(user_cred):
     username = user_cred["username"]
     password = user_cred["password"]
