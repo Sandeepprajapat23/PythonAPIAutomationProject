@@ -1,0 +1,12 @@
+1.Enter Project Name and select freestyle project
+2.Write down the Description
+3.Give the URL of the Git repository and select main as branch
+4.Build steps:
+	set path="C:\Users\sande\AppData\Roaming\Python\Python312"
+	set path="C:\Users\sande\AppData\Roaming\Python\Python312\Scripts"
+	call C:\Users\sande\PycharmProjects\PythonAPIAutomationProject\.venv\Scripts\activate.bat
+	pip install -r requirements.txt
+	pytest tests/test/crud/test_crud.py --alluredir=allure-results
+5.Post build Actions:- select Allure report
+6.Click Save
+7.Click Build Now
